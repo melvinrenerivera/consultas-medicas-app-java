@@ -1,5 +1,6 @@
 package com.mediapp.mediapp.exception;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,11 +16,13 @@ import java.util.stream.Collectors;
 
 @ControllerAdvice
 @RestController
+@Slf4j
 public class ResponseExceptionHandler  extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     protected final ResponseEntity<ExceptionResponse> manejandoException(Exception ex, WebRequest request){
         ExceptionResponse er = new ExceptionResponse(LocalDateTime.now(),ex.getMessage(),request.getDescription(false));
+        log.error(er.getMensaje());
         return new ResponseEntity<>(er,HttpStatus.INTERNAL_SERVER_ERROR);
     }
 

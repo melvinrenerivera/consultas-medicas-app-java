@@ -27,7 +27,7 @@ public class MedicoDTO {
     @NotEmpty
     @Size(min = 3)
     private String apellidos;
-    @Size(min = 3)
+    @NotNull
     private String cmp;
     private  String fotoUrl;
 

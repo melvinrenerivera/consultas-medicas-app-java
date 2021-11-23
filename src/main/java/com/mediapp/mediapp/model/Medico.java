@@ -17,7 +17,7 @@ public class Medico {
     private String apellidos;
     @Column(name = "cmp",nullable = false,length = 70,unique = true)
     private String cmp;
-    @Column(name = "fotoUrl",nullable = true)
+    @Column(name = "fotoUrl",nullable = true,length = 500)
     private  String fotoUrl;
 
 }
