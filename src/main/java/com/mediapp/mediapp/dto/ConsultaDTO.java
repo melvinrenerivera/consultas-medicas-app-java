@@ -1,15 +1,9 @@
 package com.mediapp.mediapp.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.mediapp.mediapp.model.DetalleConsulta;
-import com.mediapp.mediapp.model.Especialidad;
-import com.mediapp.mediapp.model.Medico;
-import com.mediapp.mediapp.model.Paciente;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -29,7 +23,7 @@ public class ConsultaDTO {
     @NotNull
     private MedicoDTO medicoDTO;
     @NotNull
-    private Especialidad especialidad;
+    private EspecialidadDTO especialidadDTO;
     @NotNull
     private List<DetalleConsultaDTO> detalleConsultas;
 
