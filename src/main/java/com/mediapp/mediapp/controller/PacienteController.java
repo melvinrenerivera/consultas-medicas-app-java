@@ -76,8 +76,8 @@ public class PacienteController {
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping
-    public void registrar(Integer id) throws Exception{
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) throws Exception{
 
         Paciente obj= pacienteService.listarPorId(id);
         if(obj == null){
